@@ -13,7 +13,7 @@
 
   <script>
     function Fetchdata() {
-      fetch("http://localhost:3000/cart")
+      fetch("https://add-to-cart-backend-1-zim1.onrender.com/cart")
         .then((res) => res.json())
         .then((data) => {
           console.log("Fetched data:", data); // Log fetched data
@@ -58,7 +58,7 @@
     });
 
     function DeleteProduct(id) {
-      fetch(`http://localhost:3000/cart/${id}`, {
+      fetch(`https://add-to-cart-backend-1-zim1.onrender.com/cart/${id}`, {
         method: "DELETE"
       })
         .then((res) => {
