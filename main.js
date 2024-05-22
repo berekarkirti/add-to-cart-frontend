@@ -44,7 +44,7 @@ let searchByButton = document.getElementById("search-by-button");
 let productdata = []
 
 function Fetchdata() {
-    fetch("http://localhost:3000/pitches")
+    fetch("https://add-to-cart-backend-1-zim1.onrender.com/pitches")
         .then((res) => res.json())
         .then((data) => {
             Cardlist(data)
@@ -96,7 +96,7 @@ pitchCreateBtn.addEventListener("click", () => {
         title: pitchTitleInput.value,
     };
 
-    fetch("http://localhost:3000/pitches", {
+    fetch("https://add-to-cart-backend-1-zim1.onrender.com/pitches", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -123,7 +123,7 @@ document.addEventListener("click", (e) => {
 });
 
 function DeleteProduct(id) {
-    fetch(`http://localhost:3000/pitches/${id}`, {
+    fetch(`https://add-to-cart-backend-1-zim1.onrender.com/pitches/${id}`, {
         method: "DELETE"
     }).then((res) => res.json())
         .then((data) => {
@@ -188,7 +188,7 @@ document.addEventListener("click", (e) => {
 });
 
 function PopulateForm(id) {
-    fetch(`http://localhost:3000/pitches/${id}`)
+    fetch(`https://add-to-cart-backend-1-zim1.onrender.com/pitches/${id}`)
         .then((res) => res.json())
         .then((data) => {
             console.log(data);
@@ -213,7 +213,7 @@ updatePitchBtn.addEventListener("click", () => {
         id: updatePitchIdInput.value
     }
 
-    fetch(`http://localhost:3000/pitches/${updateProductData.id}`, {
+    fetch(`https://add-to-cart-backend-1-zim1.onrender.com/pitches/${updateProductData.id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
